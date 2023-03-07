@@ -52,17 +52,27 @@ def mPublisher(Motor active):
     pub = rospy.Publisher('chatter', String, queue_size=10)
     rospy.init_node('talker', anonymous=True)
     mForward()
-    
+    mPublisher.setup(flListener,GPIO.out)
+    mPublisher.setup(frListener,GPIO.out)
+    mPublisher.setup(blListener,GPIO.out)    
+    mPublisher.setup(brListener,GPIO.out)
 
-def flListener():
+def flListener(): 
     rospy.init_node('listener', anonymous=True)
-    rospy.Subscriber('chatter', String, callback)
+    rospy.Subscriber('flchatter', String, callback)
 
 def frListener():
+    rospy.init_node('listener', anonymous=True)
+    rospy.Subscriber('frchatter', String, callback)
+
 
 def blListener():
+    rospy.init_node('listener', anonymous=True)
+    rospy.Subscriber('blchatter', String, callback)
 
 def brListener():
+    rospy.init_node('listener', anonymous=True)
+    rospy.Subscriber('brchatter', String, callback)
 
 #node that enables and disables the motors :D
 def mForward(Motor active):
