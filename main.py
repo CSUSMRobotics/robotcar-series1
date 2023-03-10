@@ -41,13 +41,14 @@ from std_msgs.msg import String
 from gpiozero import Motor
 import pygame
 
-motor00 = Motor(4, 14) #front left wheel
-motor01 = Motor(17, 27) #front right wheel
-motor10 = Motor(22,23) #back left wheel
-motor11 = Motor(11,8) #back right wheel
+motor00 = Motor(5, 6) #front left wheel
+motor01 = Motor(16, 12) #front right wheel
+motor10 = Motor(20,21) #back left wheel
+motor11 = Motor(19,26) #back right wheel
 
 
 #node
+'''
 def mPublisher(Motor active):
     pub = rospy.Publisher('chatter', String, queue_size=10)
     rospy.init_node('talker', anonymous=True)
@@ -74,6 +75,7 @@ def brListener():
     rospy.init_node('listener', anonymous=True)
     rospy.Subscriber('brchatter', String, callback)
 
+    '''
 #node that enables and disables the motors :D
 def mForward(Motor active):
     active.forward()
@@ -84,7 +86,15 @@ def mBackward(Motor active):
 
 
 def basicForward():
-    #mForward
+    #m
+
+def turnLeft():
+    #
+
+def turnRight():
+    #
+
+def basicBackward():
     
 
 if __name__ == '__main__':
