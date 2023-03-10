@@ -86,7 +86,11 @@ def mBackward(Motor active):
 
 
 def basicForward():
-    #m
+    mForward(motor00)
+    mForward(motor01)
+    mForward(motor10)
+    mForward(motor11)
+    
 
 def turnLeft():
     #
